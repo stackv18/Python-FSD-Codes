@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="i1" placeholder="Product">
+  <input type="text" id="i2" placeholder="Price">
+  <input type="text" id="i3" placeholder="Discount">
+  <input type="button" onclick="savedata()" value="Save">
+  <button onclick="showdata()" value="Show">Show</button>
+  <button onclick="removedisc()" value="Remove">RemoveDiscount</button>
+  <button onclick="cleardata()" value="Clear">Clear</button>
+
+  <script>
+    function savedata() {
+      //var Product = document.getElementById("i1").value;
+      //localStorage.setItem("Product", Product);
+      //or to make this in one line
+      localStorage.setItem("Product", document.getElementById("i1").value);
+      localStorage.setItem("Price", document.getElementById("i2").value);
+      localStorage.setItem("Discount", document.getElementById("i3").value);
+
+      sessionStorage.setItem("Product", document.getElementById("i1").value);
+      sessionStorage.setItem("Price", document.getElementById("i2").value);
+      sessionStorage.setItem("Discount", document.getElementById("i3").value);
+
+      alert("Data saved")
+    }
+
+    function showdata() {
+      var v1 = localStorage.getItem("Product");
+      var v2 = localStorage.getItem("Price");
+      var v3 = localStorage.getItem("Discount");
+
+      alert(`Price of Product ${v1} is ${v2} with discount ${v3}`)
+    }
+
+    function removedisc() {
+      localStorage.removeItem("Discount");
+    }
+
+    function cleardata() {
+      localStorage.clear();
+    }
+  </script>
+</body>
+
+</html>

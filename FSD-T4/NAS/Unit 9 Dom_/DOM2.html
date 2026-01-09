@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+<body>
+    <p id="pid" class="pc">Paragraph 1</p>
+    <p class="pc">Paragraph 2</p>
+    <p class="pc">Paragraph 3</p>
+    <button onclick="my()">Apply</button>
+
+    <script>
+        
+        function my(){
+            var d1= document.getElementsByClassName('pc');
+    // Option 1
+        d1[1].innerHTML = 'Updated Paragraph';
+    // Option 2
+        for(d of d1){
+            d.style.color = 'red';
+            d.style.fontsize = '40px';
+        }
+        d1[2].style.color='blue';
+        document.getElementById("pid").style.color='green';
+        }
+    </script>
+</body>
+</html>

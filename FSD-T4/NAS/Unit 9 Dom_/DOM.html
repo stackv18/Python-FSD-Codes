@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 id="heading1" title="JavaScript">JS</h1>
+    <p id="pid">Paragraph 1</p>
+    <img src="p.png" id="img1" width="200" height="200">
+    <p id="pid1">Paragraph 2</p>
+    <a id='link1' href="https://www.google.com">Link</a>
+    <button onclick="myfun()">Apply</button>
+
+    <script>
+        function myfun(){
+            document.getElementById('heading1').innerHTML = "<b>I am Batman</b>";
+            document.getElementById('heading1').removeAttribute('title');
+            var d = document.getElementById('pid');
+            d.innerText = `<b><i>Updated Paragraph</i></b>`;
+    // There is a significant difference between innerText and innerHTML;
+
+            document.getElementById('img1').setAttribute('src', '2.png');
+            var d1= document.getElementById("pid1");
+            d1.innerHTML = 'document object model';
+            d1.style.color='red';
+            d1.style.fontSize='35px';
+            d1.style.textTransform = 'uppercase';
+            d1.style.border = '3px dashed blue';
+            style.padding = '20px';
+
+            var d2 = document.getElementById('link1').getAttribute('href');
+            alert(`link is ${d2}`)
+        }
+    </script>
+</body>
+
+</html>
